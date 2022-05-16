@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from fritid.views import Index, About
+from django.conf import settings
+from django.conf.urls.static import static
+from fritid.views import Index, About, Slags
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Index.as_view(), name='index'),
     path('about', About.as_view(), name='about'),
-]
+    path('slags/', Slags.as_view(), name='slags'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -89,8 +89,59 @@
                     <hr />
                     {% endfor %}
                 </div>
+                <div class="form-group pt-3">
+                    <label for="navn">Navn</label>
+                    <input required class="form-control" typ="text" placeholder="Dit navn" navn="navn" />
+                </div>
 
-                <button class="btn btn-primary mt-5">Se indhold</button>
+                <div class="form-group pt-3">
+                    <label for="navn">Email</label>
+                    <input required class="form-control" typ="text" placeholder="Din email" navn="email" />
+                </div>
+
+                <div class="form-group pt-3">
+                    <label for="navn">Gade</label>
+                    <input required class="form-control" typ="text" placeholder="Din gade" navn="gade" />
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-12">
+                        <div class="form-group pt-3">
+                            <label for="navn">By</label>
+                            <input required class="form-control" typ="text" placeholder="6200 aabenraa" navn="by" />
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <div class="form-group pt-3">
+                            <label for="navn">Land</label>
+                            <input required class="form-control" typ="text" placeholder="danmark" navn="land" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#submitModal">
+                    Godkend ordrer!
+                </button>
+
+                <!--<button class="btn btn-primary mt-5">Se indhold</button>-->
+
+                <div class="modal fade" id="submitModal" tabindex="-1" aria-labelledby="submitModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="submitModalLabel">Fortsæt din ordrer</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                       
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Luk</button>
+                          <button type="submit" class="btn btn-success">Fortsæt</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
             </form>
         </div>
     </div>

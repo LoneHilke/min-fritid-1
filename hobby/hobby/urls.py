@@ -17,11 +17,12 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from fritid.views import Index, About, Slags
+from fritid.views import Index, About, Slags, SlagsConfirmation
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Index.as_view(), name='index'),
     path('about', About.as_view(), name='about'),
     path('slags/', Slags.as_view(), name='slags'),
+    path('slags_confirmation/', SlagsConfirmation.as_view(), name='slags_confirmation'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

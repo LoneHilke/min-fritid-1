@@ -28,13 +28,16 @@ class SlagsModel(models.Model):
         'Hobby', related_name='slags', blank=True)
     navn = models.CharField(max_length=50, blank=True)
     email = models.EmailField(max_length=50, blank=True)
+    gade = models.CharField(max_length=50, blank=True)
     by = models.CharField(max_length=50, blank=True)
+    land = models.CharField(max_length=50, blank=True)
 
     def __str__(self):
         return f'Slags: {self.created_on.strftime("%b %d %I: %M %p")}'
 
 class Kommentar(models.Model):
     kommentar = models.TextField()
+    navn = models.CharField(max_length=50, blank=True)
     created_on = models.DateTimeField(default=timezone.now)
     titel = models.TextField()
 

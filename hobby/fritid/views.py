@@ -99,7 +99,7 @@ class SlagsConfirmation(View):
 
         context = {
             'pk': slags.pk,
-            'items': slags.item,
+            'items': slags.items,
             'pris': slags.pris
         }
 

@@ -24,5 +24,5 @@ urlpatterns = [
     path('', Index.as_view(), name='index'),
     path('about', About.as_view(), name='about'),
     path('slags/', Slags.as_view(), name='slags'),
-    path('slags_confirmation/', SlagsConfirmation.as_view(), name='slags_confirmation'),
+    path('slags-confirmation/<int:pk>', SlagsConfirmation.as_view(), name='slags-confirmation'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

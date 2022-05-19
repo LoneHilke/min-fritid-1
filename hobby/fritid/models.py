@@ -27,7 +27,7 @@ class SlagsModel(models.Model):
     items = models.ManyToManyField(
         'Hobby', related_name='slags', blank=True)
     navn = models.CharField(max_length=50, blank=True)
-    email = models.EmailField(max_length=50, blank=True)
+    email = models.CharField(max_length=50, blank=True)
     gade = models.CharField(max_length=50, blank=True)
     by = models.CharField(max_length=50, blank=True)
     land = models.CharField(max_length=50, blank=True)

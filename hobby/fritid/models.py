@@ -31,6 +31,7 @@ class SlagsModel(models.Model):
     gade = models.CharField(max_length=50, blank=True)
     by = models.CharField(max_length=50, blank=True)
     land = models.CharField(max_length=50, blank=True)
+    oplysninger = models.TextField()
 
     def __str__(self):
         return f'Slags: {self.created_on.strftime("%b %d %I: %M %p")}'
@@ -41,3 +42,12 @@ class Kommentar(models.Model):
     created_on = models.DateTimeField(default=timezone.now)
     titel = models.TextField()
 
+class Modeller(models.Model):
+    name = models.CharField(max_length=50)
+    kategori = models.CharField(max_length=50)
+    image = models.ImageField(upload_to='menu_images/')
+    beskrivelse = models.TextField()
+    tilbehør = models.TextField(max_length=100)
+
+    def __str__(self):
+        return self.name

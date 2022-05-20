@@ -20,7 +20,14 @@
                                 </div>
                                 <p class="font-weight-bold pl-5">{{ perle.pris }}</p>
                             </div>
+                            <h5>Beskrivelse:</h5>
                             <p>{{ perle.beskrivelse }}</p>
+                            <h5>Tilbehør:</h5>
+                            <p>{{ perler.tilbehør}}</p>
+                            <h5>Link:</h5>
+                            <p>{{ perler.link}}</p>
+                            <a class="ml-3" href="{{ perler.link1 }}">Link </a>
+                            <a class="ml-3" href="{% url 'dashboard' %}">Link model</a>
                         </div>
                     </div>
                     <hr />
@@ -41,8 +48,16 @@
                                 </div>
                                 <p class="font-weight-bold pl-5">{{ kniplinger.pris }}</p>
                             </div>
+                            <h5>Beskrivelse:</h5>
                             <p>{{ kniplinger.beskrivelse }}</p>
-                        </div>
+                            <h5>Tilbehør:</h5>
+                            <p>{{ kniplinger.tilbehør}}</p>
+                            <h5>Kommentar:</h5>
+                            <p>{{ kniplinger.kommentar}}</p>
+                            <h5>Link:</h5>
+                            <a class="ml-3" href="{{ kniplinger.link1 }}">Link</a>
+                            <a class="ml-3" href="{% url 'dashboard' %}">Link model</a>
+                       </div>
                     </div>
                     <hr />
                     {% endfor %}
@@ -62,7 +77,13 @@
                                 </div>
                                 <p class="font-weight-bold pl-5">{{ fi.pris }}</p>
                             </div>
+                            <h5>Beskrivelse:</h5>
                             <p>{{ fi.beskrivelse }}</p>
+                            <h5>Tilbehør:</h5>
+                            <p>{{ fi.tilbehør}}</p>
+                            <h5>Link:</h5>
+                            <a class="ml-3" href="{{ fi.link1 }}">Link</a>
+                            <a class="ml-3" href="{% url 'dashboard' %}">Link model</a>
                         </div>
                     </div>
                     <hr />
@@ -83,7 +104,13 @@
                                 </div>
                                 <p class="font-weight-bold pl-5">{{ pap.pris }}</p>
                             </div>
+                            <h5>Beskrivelse:</h5>
                             <p>{{ pap.beskrivelse }}</p>
+                            <h5>Tilbehør:</h5>
+                            <p>{{ pap.tilbehør}}</p>
+                            <h5>Link:</h5>
+                            <a class="ml-3" href="{{ pap.link1 }}">Link</a>
+                            <a class="ml-3" href="{% url 'dashboard' %}">Link model</a>
                         </div>
                     </div>
                     <hr />
@@ -114,6 +141,12 @@
                         <div class="form-group pt-3">
                             <label for="name">Land</label>
                             <input required class="form-control" typ="text" placeholder="danmark" name="land" />
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <div class="form-group pt-3">
+                            <label for="name">Oplysninger</label>
+                            <input required class="form-control" typ="text" placeholder="motiv-antal" name="oplysninger" />
                         </div>
                     </div>
                 </div>

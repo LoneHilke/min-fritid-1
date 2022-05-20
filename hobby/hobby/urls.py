@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from fritid.views import Index, About, Slags, SlagsConfirmation
+from fritid.views import Index, About, Slags, SlagsConfirmation, Start, Test
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,6 +25,8 @@ urlpatterns = [
     path('krea/', include('krea.urls')),
     path('', Index.as_view(), name='index'),
     path('about', About.as_view(), name='about'),
+    path('start', Start.as_view(), name='start'),
     path('slags/', Slags.as_view(), name='slags'),
+    path('test', Test.as_view(), name='test'),
     path('slags-confirmation/<int:pk>', SlagsConfirmation.as_view(), name='slags-confirmation'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

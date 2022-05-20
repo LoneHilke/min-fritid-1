@@ -2,15 +2,15 @@
 from django.shortcuts import render, redirect
 from django.views import View
 from django.core.mail import send_mail
-from .models import Hobby, Kategori, SlagsModel, Kommentar
+from .models import Hobby, Kategori, SlagsModel, Kommentar, Modeller
 
 class Index(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'fritid/index.html',)
+        return render(request, 'fritid/index.html')
 
 class About(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'fritid/about.html',)   
+        return render(request, 'fritid/about.html')   
 
 class Slags(View):
     def get(self, request, *args, **kwargs):
@@ -76,7 +76,7 @@ class Slags(View):
         slags.items.add(*item_ids)
 
         body = ('Tak for din ordrer. Jeg vil gå igang så hurtigt som muligt, og du vil modtage en mail, når det er klart.\n'
-         'Betaling foregår via Mobilpay' f'Din pris er: {pris}\n')
+         'Betaling foregår via Mobilpay. ' f'Din pris er: {pris}\n')
 
         send_mail(
             'Tak for din ordrer.',
@@ -104,6 +104,33 @@ class SlagsConfirmation(View):
         }
 
         return render(request, 'fritid/slags_confirmation.html', context)
+
+class Start(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'fritid/start.html')
+
+class Test(View):
+    def get(self, request, *args, **kwargs):
+        # each item form kategori
+        perler =Modeller.objects.filter(kategori__name__contains='Perler')
+        knipling = Modeller.objects.filter(
+            kategori__name__contains='Knipling'
+        )
+        filt = Modeller.objects.filter(
+            kategori__name__contains='Filt'
+        )
+        papir =Modeller.objects.filter(
+            kategori__name__contains='Papir'
+        )
+
+        context = {
+            'perler': perler,
+            'knipling': knipling,
+            'filt': filt,
+            'papir': papir,
+        }
+        return render(request, 'fritid/test.html', context)
+
 
 
 

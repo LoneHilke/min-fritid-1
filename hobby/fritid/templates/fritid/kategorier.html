@@ -1,0 +1,21 @@
+{% extends 'fritid/base.html' %}
+
+{% block content %}
+<div class="container mb-5">
+    <div class="row justify-content-center mt-5">
+        <div class="col--md-8 col-sm-12 offset-md-1 p-4 text-center">
+            <h1>De 4 kategorier</h1>
+            <h2>Her er de kategorier jeg har arbejdet inden for.</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-1">
+        <div class="card col-md-5 col-sm-12 offset-md-1 p-4 text-center">
+            
+            <a href="{% url 'perler' %}"  class="btn btn-outline-success"><i class="fas fa-circle p-1"></i>Perler</a>
+            <a href="{% url 'kniplinger' %}" class="btn btn-outline-success"><i class="fas fa-project p-1" ></i>Knipling</a>
+            <a href="{% url 'filt' %}"  class="btn btn-outline-success"><i class="fas fa-tree p-1"></i>Filt</a>
+            <a href="{% url 'papir' %}"  class="btn btn-outline-success"><i class="far fa-paper-plane p-1"></i>Papir</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -18,7 +18,7 @@ class Dashboard(LoginRequiredMixin, UserPassesTestMixin, View):
         context = {
             'slags': slags,
             'total_revenue': total_revenue,
-            'total_slags': len(slags),
+            'total_slags': len(slags)
         }
 
         return render(request, 'krea/dashboard.html', context)

@@ -1,0 +1,41 @@
+{% extends 'fritid/base.html' %}
+
+{% block content %}
+<div class="container mb-5">
+    <div class="row justify-content-center mt-1">
+        <div class="col-md-12 col-sm-12 p-4">
+            <h2>Papir</h2>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="pt-5">
+                    {% for pap in papir %}
+                    <div class="row">
+                        <div class="col-md-2 col-sm-12">
+                            <img class="rounded" src="{{ pap.image.url }}" width="150" height="100"/>
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <div class="d-flex flex-row">
+                                <div class="form-group form-check">
+                                    
+                                    <label class="form-check-label">{{ pap.titel }}</label>
+                                </div>
+                                
+                            </div>
+                            <h5>Beskrivelse:</h5>
+                            <p>{{ pap.beskrivelse }}</p>
+                            <h5>Tilbehør:</h5>
+                            <p>{{ pap.tilbehør}}</p>
+                            <h5>Link:</h5>
+                            <p>{{ pap.link}}</p>
+                            <a class="ml-3" href="{{ pap.link1 }}">Link </a>
+                            <a class="ml-3" href="{% url 'dashboard' %}">Link model</a>
+                        </div>
+                    </div>
+                    <hr />
+                {% endfor %}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

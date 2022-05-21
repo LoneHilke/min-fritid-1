@@ -23,10 +23,10 @@
                             <h5>Beskrivelse:</h5>
                             <p>{{ perle.beskrivelse }}</p>
                             <h5>Tilbehør:</h5>
-                            <p>{{ perler.tilbehør}}</p>
+                            <p>{{ perle.tilbehør}}</p>
                             <h5>Link:</h5>
-                            <p>{{ perler.link}}</p>
-                            <a class="ml-3" href="{{ perler.link1 }}">Link </a>
+                            <p>{{ perle.link}}</p>
+                            <a class="ml-3" href="{{ perle.link1 }}">Link </a>
                             <a class="ml-3" href="{% url 'dashboard' %}">Link model</a>
                         </div>
                     </div>
@@ -146,7 +146,7 @@
                     <div class="col-md-4 col-sm-12">
                         <div class="form-group pt-3">
                             <label for="name">Oplysninger</label>
-                            <input required class="form-control" typ="text" placeholder="motiv-antal" name="oplysninger" />
+                            <input required class="form-control" typ="text" placeholder=" fx. motiv-antal" name="oplysninger" />
                         </div>
                     </div>
                 </div>

@@ -87,6 +87,46 @@ class Slags(View):
 
         return redirect('slags-confirmation', pk=slags.pk)
 
+class Perler(View):
+    def get(self, request, *args, **kwargs):
+
+        perler = Hobby.objects.filter(kategori__titel__contains='Perler')
+
+        context = {
+            'perler': perler
+        }
+        return render(request, 'fritid/perler.html', context)
+
+class Kniplinger(View):
+    def get(self, request, *args, **kwargs):
+
+        knipling = Hobby.objects.filter(kategori__titel__contains='Knipling')
+
+        context = {
+            'knipling': knipling
+        }
+        return render(request, 'fritid/kniplinger.html', context)
+
+class Filt(View):
+    def get(self, request, *args, **kwargs):
+
+        filt = Hobby.objects.filter(kategori__titel__contains='Filt')  
+
+        context = {
+            'filt': filt
+        }
+        return render(request, 'fritid/filt.html', context)
+
+class Papir(View):
+    def get(self, request, *args, **kwargs):
+
+        papir = Hobby.objects.filter(kategori__titel__contains='Papir')
+
+        context = {
+            'papir': papir
+        }
+        return render(request, 'fritid/papir.html', context)
+
 class SlagsConfirmation(View):
     def get(self, request, pk, *args, **kwargs):
         slags = SlagsModel.objects.get(pk=pk)
@@ -120,6 +160,16 @@ class Test(View):
         }
         
         return render(request, 'fritid/test.html', context)
+
+class Kategorier(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'fritid/kategorier.html')
+
+
+
+
+
+
 
 
 

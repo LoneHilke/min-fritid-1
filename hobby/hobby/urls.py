@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from fritid.views import Index, About, Slags, SlagsConfirmation, Start, Test
+from fritid.views import Index, About, Slags, SlagsConfirmation, Start, Test, Kategorier, Perler, Kniplinger, Filt, Papir
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,5 +28,10 @@ urlpatterns = [
     path('start', Start.as_view(), name='start'),
     path('slags/', Slags.as_view(), name='slags'),
     path('test', Test.as_view(), name='test'),
+    path('kategorier', Kategorier.as_view(), name='kategorier'),
+    path('perler', Perler.as_view(), name='perler'),
+    path('kniplinger', Kniplinger.as_view(), name='kniplinger'),
+    path('filt', Filt.as_view(), name='filt'),
+    path('papir', Papir.as_view(), name='papir'),
     path('slags-confirmation/<int:pk>', SlagsConfirmation.as_view(), name='slags-confirmation'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -15,17 +15,11 @@ class About(View):
 class Slags(View):
     def get(self, request, *args, **kwargs):
         # each item form kategori
-        perler =Hobby.objects.filter(kategori__titel__contains='Perler')
-        knipling = Hobby.objects.filter(
-            kategori__titel__contains='Knipling'
-        )
-        filt = Hobby.objects.filter(
-            kategori__titel__contains='Filt'
-        )
-        papir =Hobby.objects.filter(
-            kategori__titel__contains='Papir'
-        )
-
+        perler = Hobby.objects.filter(kategori__titel__contains='Perler')
+        knipling = Hobby.objects.filter(kategori__titel__contains='Knipling')
+        filt = Hobby.objects.filter(kategori__titel__contains='Filt')  
+        papir = Hobby.objects.filter(kategori__titel__contains='Papir')
+      
         context = {
             'perler': perler,
             'knipling': knipling,
@@ -112,23 +106,19 @@ class Start(View):
 class Test(View):
     def get(self, request, *args, **kwargs):
         # each item form kategori
-        perler =Modeller.objects.filter(kategori__name__contains='Perler')
-        knipling = Modeller.objects.filter(
-            kategori__name__contains='Knipling'
-        )
-        filt = Modeller.objects.filter(
-            kategori__name__contains='Filt'
-        )
-        papir =Modeller.objects.filter(
-            kategori__name__contains='Papir'
-        )
-
+        
+        perler = Modeller.objects.filter(emne__name__contains='Perler')  
+        knipling = Modeller.objects.filter(emne__name__contains='Knipling')
+        filt = Modeller.objects.filter(emne__name__contains='Filt')
+        papir = Modeller.objects.filter(emne__name__contains='Papir')
+         
         context = {
             'perler': perler,
             'knipling': knipling,
             'filt': filt,
             'papir': papir,
         }
+        
         return render(request, 'fritid/test.html', context)
 
 

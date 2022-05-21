@@ -45,9 +45,16 @@ class Kommentar(models.Model):
 class Modeller(models.Model):
     name = models.CharField(max_length=50)
     kategori = models.CharField(max_length=50)
+    emne = models.ManyToManyField('Emne', related_name='item')
     image = models.ImageField(upload_to='menu_images/')
     beskrivelse = models.TextField()
     tilbehør = models.TextField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+class Emne(models.Model):
+    name = models.CharField(max_length=50)
 
     def __str__(self):
         return self.name
